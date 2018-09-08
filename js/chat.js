@@ -30,7 +30,7 @@ $(function(){
                 var user =
                         `<div class='userMessage'>
                             <div class="userImg">
-                                <img src="img/1.jpg" alt="">
+                                <img src="https://github.com/guliansheng/tuling/tree/gh-pages/img/1.jpg" alt="">
                             </div>
                             <div class="userText">${text}</div>
                             <span class="time">${time}</span>
@@ -57,7 +57,7 @@ $(function(){
                         var turing =
                                  `<div class="turingMessage">
                                     <div class="turingImg">
-                                        <img src="img/2.png" alt="">
+                                        <img src="https://github.com/guliansheng/tuling/tree/gh-pages/img/2.png" alt="">
                                     </div>
                                     <div class="turingText">${data.text} : <a href='${data.url}' target='_blank'>${data.url}</a></div>
                                     <span class="time">${d2y}-${d2mo}-${d2d}&nbsp;&nbsp;&nbsp;${d2h}:${d2m}:${d2s}</span>
@@ -67,7 +67,7 @@ $(function(){
                         var turing =
                                  `<div class="turingMessage">
                                     <div class="turingImg">
-                                        <img src="img/2.png" alt="">
+                                        <img src="https://github.com/guliansheng/tuling/tree/gh-pages/img/2.png" alt="">
                                     </div>
                                     <div class="turingText">${data.text}</div>
                                     <span class="time">${d2y}-${d2mo}-${d2d}&nbsp;&nbsp;&nbsp;${d2h}:${d2m}:${d2s}</span>
@@ -99,7 +99,7 @@ $(function(){
                      var user2 =
                             `<div class='userMessage'>
                                 <div class="userImg">
-                                    <img src="img/1.jpg" alt="">
+                                    <img src="https://github.com/guliansheng/tuling/tree/gh-pages/img/1.jpg" alt="">
                                 </div>
                                 <div class="userText">${data[i].chatcontent}</div>
                                 <span class="time">${data[i].chattime}</span>
@@ -109,7 +109,7 @@ $(function(){
                     var turing2 =
                                  `<div class="turingMessage">
                                     <div class="turingImg">
-                                        <img src="img/2.png" alt="">
+                                        <img src="https://github.com/guliansheng/tuling/tree/gh-pages/img/2.png" alt="">
                                     </div>
                                     <div class="turingText">${data[i].chatcontent}</div>
                                     <span class="time">${data[i].chattime}</span>

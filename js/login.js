@@ -6,7 +6,7 @@ $('.xsmm-img').mousedown(function(){
     }
     else{
         $('.password').hide();
-        $('.showword').attr({'value':val}).show();3
+        $('.showword').attr({'value':val}).show();
     }
 })
 $('.xsmm-img').mouseup(function(){
