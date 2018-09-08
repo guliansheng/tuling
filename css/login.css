@@ -1,0 +1,169 @@
+body,ul,li,img,span,input{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background: #fff;
+    }
+* {
+    font-family: 微软雅黑;
+}
+ ::-ms-clear, ::-ms-reveal{display: none;}/*清除ie浏览器自带的input图标，如：text中的×号和password中的小眼睛*/
+input{
+    background: transparent;
+}
+.loginTop {
+    height: 80px;
+    width: 100%;
+}
+.loginTop-center{
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    background: url('../img/login-log.png') no-repeat 0 -25px;
+    background-size: 320px 110px;
+}
+.loginContent {
+    height: 514px;
+    width: 100%;
+    background: #469fde;
+}
+.loginContent-center {
+    width: 1200px;
+    height: 514px;
+    margin: 0 auto;
+    background: url('../img/login-bg.png') no-repeat;
+    background-position: 0 40px;
+}
+.log_in {
+    width: 310px;
+    height: 330px;
+    float: right;
+    background: #fff;
+    margin-top: 60px;
+    margin-right: 20px;
+    box-shadow: 0 0 13px rgba(7, 7, 7, 0.4);
+    padding:40px 35px;
+}
+.log_in-title{
+    width: 310px;
+    height: 60px;
+    font-size: 20px;
+    text-align:center;
+    color: #4bb3fc;
+}
+.login-form{
+    position: relative;
+}
+.login-form input[type=text],input[type=password]{
+    width: 180px;
+    height: 40px;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    padding-left: 65px;
+    font-size: 14px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    outline: none;
+    padding-right: 65px;
+}
+.denglu-img,.mima-img,.xsmm-img{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 20px;
+}
+.denglu-img{
+    top: 8px;
+}
+.mima-img{
+    top: 70px;
+}
+.xsmm-img{
+    top: 72px;
+    left: 260px;
+    cursor: pointer;
+}
+.login-form input[type=submit]{
+    width: 310px;
+    height: 45px;
+    background: #4bb3fc;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size:20px;
+    cursor: pointer;
+}
+.login-form input[type=submit]:hover{
+    background: #30a2f1;
+ }
+input[type=checkbox]{
+    /*同样，首先去除浏览器默认样式*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /*编辑我们自己的样式*/
+    position: relative;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border:1px solid #ccc;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+input[type=checkbox]:after{
+    content: '√';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #4bb3fc;
+    color: #fff;
+    text-align: center;
+    line-height: 13px;
+    /*增加动画*/
+    -webkit-transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
+    transition: all ease-in-out 300ms;
+    /*利用border-radius和opacity达到填充的假象，首先隐藏此元素*/
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    opacity: 0;
+}
+input[type=checkbox]:checked:after{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    opacity: 1;
+}
+.login-span{
+    font-size: 12px;
+    color: #4bb3fc;
+    float: right;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.login-span a{
+    font-size: 12px;
+    color: #4bb3fc;
+    text-decoration: none;
+}
+.loginBottom {
+    width: 100%;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 12px;
+    color: #777;
+}
