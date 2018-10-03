@@ -1,9 +1,4 @@
 $(function() {
-  //封装一个函数，可以讲一个聊天记录插入到数据库中
-  function addchat(chatuser, chatcontent, chattime) {
-    /* 在聊天框中显示 */
-    $.post("ChatServlet", { "chatuser": chatuser, "chatcontent": chatcontent, "chattime": chattime, "optype": "insert" }, function(data) {}, "text");
-  }
   //自动填充0
   function pad(num, n) {
     var len = num.toString().length;
@@ -34,10 +29,8 @@ $(function() {
                             <div class="userText">${text}</div>
                             <span class="time">${time}</span>
                         </div>`;
-      console.log(time);
-      console.log(text);
       //存储用户的记录
-      addchat("gu", text, time);
+      userdata = {'name':'user', 'text':text, 'time':time}
       $('.chatMessage').append(user);
       $('#sendText').val('');
       $.getJSON('http://www.tuling123.com/openapi/api', {
@@ -71,10 +64,10 @@ $(function() {
                                     <span class="time">${d2y}-${d2mo}-${d2d}&nbsp;&nbsp;&nbsp;${d2h}:${d2m}:${d2s}</span>
                                 </div>`;
         }
-        console.log(time2);
-        console.log(data.text);
         //存储tuling的记录
-        addchat("tuling", data.text, time2);
+        tulingdata = {'name':'tuling', 'text':data.text, 'time':time2}
+        data = [userdata,tulingdata]
+        localStorage.setItem('data', JSON.stringify(data))
         $('.chatMessage').append(turing);
         $('.chatMessage')[0].scrollTop = $('.chatMessage')[0].scrollHeight;
       });
@@ -90,31 +83,30 @@ $(function() {
   $(document).ready(function() {
     //初始化之前的聊天记录
     /* 通过ajax查询数据库 */
-    $.getJSON("ChatServlet", { "optype": "select" }, function(data) {
+      data = JSON.parse(localStorage.getItem('data'))
       for (var i = 0; i < data.length; i++) {
-        if (data[i].chatuser == "gu") {
+        if (data[i].name == "user") {
           var user2 =
             `<div class='userMessage'>
                                 <div class="userImg">
                                     <img src="./img/1.jpg" alt="">
                                 </div>
-                                <div class="userText">${data[i].chatcontent}</div>
-                                <span class="time">${data[i].chattime}</span>
+                                <div class="userText">${data[i].text}</div>
+                                <span class="time">${data[i].time}</span>
                             </div>`;
           $('.chatMessage').append(user2);
-        } else if (data[i].chatuser == "tuling") {
+        } else if (data[i].name == "tuling") {
           var turing2 =
             `<div class="turingMessage">
                                     <div class="turingImg">
                                         <img src="./img/2.png" alt="">
                                     </div>
-                                    <div class="turingText">${data[i].chatcontent}</div>
-                                    <span class="time">${data[i].chattime}</span>
+                                    <div class="turingText">${data[i].text}</div>
+                                    <span class="time">${data[i].time}</span>
                                 </div>`;
           $('.chatMessage').append(turing2);
         }
       }
       $('.chatMessage')[0].scrollTop = $('.chatMessage')[0].scrollHeight;
-    });
   });
 })
